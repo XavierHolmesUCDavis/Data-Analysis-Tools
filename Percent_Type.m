@@ -1,3 +1,4 @@
+%% Convert glycan abundance data to percent type
 % Define the path to the CSV_Data folder
 folder_path = '\Users\xavie\OneDrive\Documents\GitHub Repositories\Data-Analysis-Tools\CSV_Data';
 
