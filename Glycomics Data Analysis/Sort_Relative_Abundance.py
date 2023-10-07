@@ -4,7 +4,7 @@ Created on Sat Oct  7 14:16:49 2023
 
 @author: Xavier Holmes
 
-Translated from script original in MATLAB
+Translated from original in MATLAB
 
 """
 import pandas as pd
