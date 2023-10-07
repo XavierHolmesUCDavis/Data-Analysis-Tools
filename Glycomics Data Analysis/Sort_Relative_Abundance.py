@@ -4,14 +4,23 @@ Created on Sat Oct  7 14:16:49 2023
 
 @author: Xavier Holmes
 
-Translated from MATLAB Sort_Rel_Data.m
+Translated from script original in MATLAB
 
 """
 import pandas as pd
 import csv
 import os
 
-print("Preparing Individual Files for N Glycan Program")
+print("Preparing individual files for input to N Glycan Program")
+prompt = input('Have you named the correct csv file? (y/n) ')
+if prompt == 'n':
+    csv_file = input('What is the name of the csv file? ')
+
+prompt = input('Have you moved the csv file to the Glycomics Data Analysis folder? Within that should be another folder called Individual Result Files? (y/n) ')
+if prompt == 'n':
+    print('Change the os.chdir() commands to the correct path and try again')
+    exit()
+
 os.chdir('C:/Python Scripts/Glycomics Data Analysis')
 csv_file = 'Cytokine_Assay_1.csv'
 
@@ -47,4 +56,4 @@ for i in range(len(unique_files)):
         f.write('#CompoundList\n#\n' + content)
 os.chdir('C:/Python Scripts/Glycomics Data Analysis')
 
-    
+print("Files are in the individual results folder")
