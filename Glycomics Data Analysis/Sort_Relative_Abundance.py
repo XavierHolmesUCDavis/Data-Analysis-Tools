@@ -16,7 +16,7 @@ prompt = input('Have you named the correct csv file? (y/n) ')
 if prompt == 'n':
     csv_file = input('What is the name of the csv file? ')
 
-prompt = input('Have you moved the csv file to the Glycomics Data Analysis folder? Within that should be another folder called Individual Result Files? (y/n) ')
+prompt = input('Have you moved the csv file to the Glycomics Data Analysis folder (Also need an individual results folder)? (y/n) ')
 if prompt == 'n':
     print('Change the os.chdir() commands to the correct path and try again')
     exit()
