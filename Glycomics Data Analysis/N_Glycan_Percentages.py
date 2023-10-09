@@ -10,6 +10,12 @@ Translated from MATLAB
 import pandas as pd
 import os 
 
+prompt = input('Are you using the glycan compositional file? (y/n) ')
+
+if prompt == 'n':
+    print('Use the glycan compositional file and try again')
+    exit()
+
 os.chdir('C:/Python Scripts/Glycomics Data Analysis')
 
 original_sheet_name = 'Cytokine_Assay_Rel.csv'
