@@ -49,12 +49,13 @@ for i in range(len(sample_names)):
 percentages_df = pd.DataFrame(percentages, columns=['High_Mannose', 'Undecorated', 'Fucosylated', 'Sialylated', 'Sialofucosylated'])
 percentages_df = percentages_df*100
 percentages_df.insert(0, 'Sample', sample_names)
+percentages_df = percentages_df.set_index('Sample').transpose()
 filename = original_sheet_name
 name = filename.split('.')[0]
 
 output_filename = name + '_percentages_GraphPad.csv'
 
-percentages_df.to_csv(output_filename, index=False)
+percentages_df.to_csv(output_filename)
 
 print('Percentages written to', output_filename)
 
