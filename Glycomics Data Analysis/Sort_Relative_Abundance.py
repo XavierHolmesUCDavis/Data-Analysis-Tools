@@ -2,7 +2,7 @@ import pandas as pd
 import csv
 import os
 
-csv_file = 'CoCulture_3_Nuclei_30_MSMS.csv'
+csv_file = 'Yasmine_Glioblastoma_Full_30_MSMS.csv'
 
 print("Preparing individual files for input to N Glycan Program")
 prompt = input('Have you named the correct csv file? (y/n) ')
@@ -22,9 +22,9 @@ with open(csv_file, 'r') as file:
     csv_reader = csv.reader(file)
     next(csv_reader)
     next(csv_reader)
-    header = next(csv_reader)[:12] 
+    header = next(csv_reader)[:13] 
     for line in csv_reader:
-        data.append(line[:12]) 
+        data.append(line[:13]) 
 
 
 df_list = []
@@ -34,7 +34,8 @@ for line in data:
 df_from_csv = pd.DataFrame(df_list, columns=header)
 
 unique_files = df_from_csv['File'].unique()
-unique_files = [i for i in unique_files]
+unique_files = [i for i in unique_files if i is not None]
+
 os.chdir('C:/Python Scripts/Glycomics Data Analysis/Individual Result Files')
 
 for i in range(len(unique_files)):
