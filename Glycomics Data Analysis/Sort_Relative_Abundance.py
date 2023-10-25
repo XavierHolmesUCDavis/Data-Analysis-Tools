@@ -1,15 +1,8 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Oct  7 14:16:49 2023
-
-@author: Xavier Holmes
-
-Translated from original in MATLAB
-
-"""
 import pandas as pd
 import csv
 import os
+
+csv_file = 'CoCulture_3_Nuclei_30_MSMS.csv'
 
 print("Preparing individual files for input to N Glycan Program")
 prompt = input('Have you named the correct csv file? (y/n) ')
@@ -22,7 +15,6 @@ if prompt == 'n':
     exit()
 
 os.chdir('C:/Python Scripts/Glycomics Data Analysis')
-csv_file = 'Cytokine_Assay_1.csv'
 
 data = []
 
@@ -30,9 +22,10 @@ with open(csv_file, 'r') as file:
     csv_reader = csv.reader(file)
     next(csv_reader)
     next(csv_reader)
-    header = next(csv_reader)
+    header = next(csv_reader)[:12] 
     for line in csv_reader:
-        data.append(line)
+        data.append(line[:12]) 
+
 
 df_list = []
 for line in data:
@@ -48,8 +41,8 @@ for i in range(len(unique_files)):
     current_data = df_from_csv[df_from_csv['File'] == unique_files[i]]
     filename = unique_files[i] + '.csv'
     current_data.to_csv(filename, index=False)
-    #compound_list = [unique_files[i]] * len(current_data)
-    #compound_list_table = pd.DataFrame({'file': compound_list})
+    compound_list = [unique_files[i]] * len(current_data)
+    compound_list_table = pd.DataFrame({'file': compound_list})
     with open(filename, 'r+') as f:
         content = f.read()
         f.seek(0, 0)
@@ -57,3 +50,4 @@ for i in range(len(unique_files)):
 os.chdir('C:/Python Scripts/Glycomics Data Analysis')
 
 print("Files are in the individual results folder")
+
