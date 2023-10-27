@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Oct  7 14:16:49 2023
+@author: Xavier Holmes
+Translated from original in MATLAB
+"""
+
 import pandas as pd
 import csv
 import os
