@@ -13,7 +13,7 @@ import os
 prompt = input('Are you using the glycan relative abundance file? (y/n) ')
 
 if prompt == 'n':
-    print('Use the glycan compositional file and try again')
+    print('Use the glycan relative abundance file and try again')
     exit()
 
 os.chdir('C:/Python Scripts/Glycomics Data Analysis')
