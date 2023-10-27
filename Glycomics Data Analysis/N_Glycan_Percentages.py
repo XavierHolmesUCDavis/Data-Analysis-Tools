@@ -10,7 +10,7 @@ Translated from MATLAB
 import pandas as pd
 import os 
 
-prompt = input('Are you using the glycan compositional file? (y/n) ')
+prompt = input('Are you using the glycan relative abundance file? (y/n) ')
 
 if prompt == 'n':
     print('Use the glycan compositional file and try again')
