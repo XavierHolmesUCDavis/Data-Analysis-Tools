@@ -1,0 +1,9 @@
+ame: glycomics_data_old
+channels:
+    - defaults
+dependencies:
+    - python=2.7
+    - csv=2.3
+    - dircache=2.7
+    - os=2.7
+    - shell

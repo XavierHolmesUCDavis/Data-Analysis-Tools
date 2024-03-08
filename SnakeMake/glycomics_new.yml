@@ -1,0 +1,12 @@
+name: glycomics_data_uptodate
+channels:
+    - defaults
+dependencies:
+    - pandas=1.5.2
+    - python=3.11.5
+    - csv
+    - os 
+    - sys
+    - shutil
+    
+    
